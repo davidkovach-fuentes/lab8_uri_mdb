@@ -1,7 +1,6 @@
 /* TO DO:
 
 	- Create an array to hold the titles of your favorite movie *and* your partners' favorite movies.
-
 	- Create an array with URLs for each movie poster. 
 	  Note: Search Google Images for the movie title with "wiki" (i.e., "Mean Girls wiki") to find the official poster on Wikipedia.
 	
@@ -13,6 +12,37 @@
 
 */
 
+var movieTitles = ['Spirited Away', 'Princess Mononoke', 'Castle in The Sky'];
+
+var movieURLS = ['https://upload.wikimedia.org/wikipedia/en/d/db/Spirited_Away_Japanese_poster.png'
+	, 'https://academymuseumstore.org/cdn/shop/files/5e2885a3-a526-41ce-8726-f19cf43dbb41.jpg?v=1755013834'
+	, 'https://upload.wikimedia.org/wikipedia/en/f/f5/Castle_in_the_Sky_%281986%29.png'];
+
+var siteURLS = ['spirited-away.html'
+	, 'princess_mononoke.html'
+	, 'castle_in_the_sky.html'];
+
+var movieRatings = [5, 5, 5];
+
+var movieImages = document.getElementsByClassName("movie-image");
+var movieLinks = document.getElementsByClassName("movie-link");
+
+var movieRatingElements = document.getElementsByClassName("rating");
+
+
+for (let i = 0; i < movieImages.length; i++) {
+
+    movieImages[i].src = movieURLS[i];
+    movieImages[i].alt = movieTitles[i];
+    
+
+    for (let j = 0; j < movieRatings[i]; j++) {
+			movieRatingElements[i].textContent += '★';
+    }
+
+		movieLinks[i].textContent = movieTitles[i];
+		movieLinks[i].href = siteURLS[i];
+}
 
 /* TO DO:
 	
